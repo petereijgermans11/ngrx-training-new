@@ -63,10 +63,6 @@ const reducer = createReducer<ICityState>(
             cities: state.cities.filter((b) => b.id !== city.id)
         };
     }),
-    on(fromgetCities.setActiveCity, (state, { city }) => {
-        return { ...state, activeCity: city };
-    })
-
 );
 
 export function cityReducer(state = initialCityState, actions: Action): ICityState {

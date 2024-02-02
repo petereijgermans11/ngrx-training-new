@@ -51,9 +51,3 @@ export const deleteCitySuccess = createAction(
         city: ICity;
     }>()
 );
-export const setActiveCity = createAction(
-    `Set Active City`,
-    props<{
-        city: ICity;
-    }>()
-);
