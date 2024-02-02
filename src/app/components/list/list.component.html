@@ -1,0 +1,7 @@
+<ul *ngIf="citiesList">
+  <app-list-item
+    *ngFor="let city of citiesList"
+    [activeCity]="activeCity"
+    [city]="city"
+  ></app-list-item>
+</ul>
