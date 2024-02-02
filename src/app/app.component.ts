@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ICity } from './interfaces/city.interface';
 import { select, Store } from '@ngrx/store';
-import { getCities, setActiveCity, selectgetCitiesList, selectCityIsLoading, selectActiveCity} from './store/city';
+import { getCities, selectgetCitiesList, selectCityIsLoading, selectActiveCity} from './store/city';
 import { setMode, getMode, selectMode } from './store/application';
 import { Mode } from './interfaces/Mode';
 
