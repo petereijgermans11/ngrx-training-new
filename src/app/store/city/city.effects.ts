@@ -21,14 +21,6 @@ export class CityEffects {
         )
     );
 
-    createCity$ = createEffect(() =>
-        this.actions$.pipe(
-            ofType(fromCities.createCity),
-            switchMap(({city}) => this.cityService.create(city)),
-            map((city: ICity) => fromCities.createCitySuccess({city}))
-        )
-    );
-
     updateCity$ = createEffect(() =>
         this.actions$.pipe(
             ofType(fromCities.updateCity),

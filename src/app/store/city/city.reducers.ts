@@ -24,14 +24,6 @@ const reducer = createReducer<ICityState>(
             cities
         };
     }),
-    
-    on(fromgetCities.createCitySuccess, (state, { city }) => {
-        return {
-            ...state,
-            cities: [...state.cities, city],
-            isLoading: false,
-        };
-    }),
     on(fromgetCities.updateCity, (state) => {
         return {
             ...state,
