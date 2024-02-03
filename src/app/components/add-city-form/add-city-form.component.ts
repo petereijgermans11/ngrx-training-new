@@ -39,7 +39,14 @@ export class AddCityFormComponent implements OnInit {
         return;
     }
 
-    
+    this.store.dispatch(fromCities.createCity({
+        city: {
+            id: Math.random(),
+            cityName,
+            summary: descriptionValue,
+            image: imageValue + '.jpg'
+        }
+    }));
   }
 
   cancel() {
