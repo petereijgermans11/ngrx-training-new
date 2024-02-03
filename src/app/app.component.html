@@ -22,8 +22,6 @@
 
               <app-showcase [activeCity]="data.activeCity"></app-showcase>
         </div>
-        <div *ngIf="data.mode === Mode.Add">
-            <app-add-city-form (cancelForm)="modeHandler(Mode.ShowCase)"></app-add-city-form>
-        </div>
+        
     </div>
 </ng-container>
