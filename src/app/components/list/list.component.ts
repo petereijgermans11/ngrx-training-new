@@ -14,6 +14,12 @@ import { ICity } from '../../../app/interfaces/city.interface';
 export class ListComponent {
   @Input() citiesList?: ICity[] | null;
   @Input() activeCity?: ICity;
+  @Output() setNewActiveCity = new EventEmitter<ICity>();
 
   constructor() {}
+
+  setActiveCity(city: ICity) {
+    this.activeCity = city;
+    this.setNewActiveCity.emit(city);
+  }
 }

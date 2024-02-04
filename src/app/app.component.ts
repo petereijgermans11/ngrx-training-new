@@ -15,8 +15,12 @@ export class AppComponent implements OnInit {
     cities$: Observable<ICity[]>;
     isLoading$: Observable<boolean>;
     mode$: Observable<Mode>;
-    activeCity$:  Observable<ICity>;
     Mode = Mode;
+    activeCity: ICity | undefined;
+
+    setNewCity(city: any) {
+      this.activeCity = city;
+    }
 
     constructor(private readonly store: Store) {}
 
@@ -34,7 +38,6 @@ export class AppComponent implements OnInit {
         this.cities$ = this.store.pipe(select(selectgetCitiesList));
         this.isLoading$ = this.store.pipe(select(selectCityIsLoading));
         this.mode$ = this.store.pipe(select(selectMode)); 
-        this.activeCity$ = this.store.pipe(select(selectActiveCity));
     }
 
 
