@@ -11,20 +11,6 @@ export const getCitiesSuccess = createAction(
     }>()
 );
 
-export const createCity = createAction(
-    `${prefix} Create City`,
-    props<{
-        city: ICity;
-    }>()
-);
-
-export const createCitySuccess = createAction(
-    `${createCity.type} Success`,
-    props<{
-        city: ICity;
-    }>()
-);
-
 export const updateCity = createAction(
     `${prefix} Update City`,
     props<{
