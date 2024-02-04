@@ -1,6 +1,7 @@
 
 
 <li
+  (click)="setActiveCity(city)"
   [ngClass]="{ 'active-city': activeCity?.cityName === city.cityName }"
 >
   {{ city.cityName }}

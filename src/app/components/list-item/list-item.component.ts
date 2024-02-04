@@ -12,7 +12,13 @@ import { Store } from '@ngrx/store';
 export class ListItemComponent {
   @Input() city!: ICity;
   @Input() activeCity?: ICity;
+  @Output() setNewActivecity = new EventEmitter<ICity>();
 
   constructor(private readonly store: Store) {}
+
+  setActiveCity(city: ICity) {
+    this.activeCity = city;
+    this.setNewActivecity.emit(city);
+  }
 
 }

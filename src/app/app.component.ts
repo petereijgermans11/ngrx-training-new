@@ -15,14 +15,18 @@ export class AppComponent implements OnInit {
     cities$: Observable<ICity[]>;
     isLoading$: Observable<boolean>;
     mode$: Observable<Mode>;
-    activeCity$:  Observable<ICity>;
     Mode = Mode;
+    activeCity: ICity | undefined;
 
     constructor(private readonly store: Store) {}
 
     ngOnInit(): void {
         this.initDispatch();
         this.initSubscriptions();
+    }
+
+    setNewCity(city: any) {
+        this.activeCity = city;
     }
 
     private initDispatch(): void {
@@ -34,7 +38,6 @@ export class AppComponent implements OnInit {
         this.cities$ = this.store.pipe(select(selectgetCitiesList));
         this.isLoading$ = this.store.pipe(select(selectCityIsLoading));
         this.mode$ = this.store.pipe(select(selectMode)); 
-        this.activeCity$ = this.store.pipe(select(selectActiveCity));
     }
 
 
