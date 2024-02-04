@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import * as fromCities from '../../../app/store/city';
+
 import {
   FormBuilder,
   FormGroup,
@@ -38,7 +38,7 @@ export class AddCityFormComponent implements OnInit {
     if (!cityName) {
         return;
     }
-
+    console.log(this.addCityForm.value);
   
   }
 
