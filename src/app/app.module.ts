@@ -11,7 +11,6 @@ import { CommonModule } from '@angular/common';
 import { ListComponent } from './components/list/list.component';
 import { ShowcaseComponent } from './components/showcase/showcase.component';
 import { AddbuttonComponent } from './components/addbutton/addbutton.component';
-import { ApplicationStoreModule } from './store/application/application.module';
 import { AddCityFormComponent } from './components/add-city-form/add-city-form.component';
 import { NotificationComponent } from './components/notification/notification.component';
 
@@ -26,8 +25,6 @@ import { NotificationComponent } from './components/notification/notification.co
         StoreModule.forRoot(),
         EffectsModule.forRoot(),
         StoreDevtoolsModule.instrument(),
-        ApplicationStoreModule,
-       
         CommonModule,
         ListComponent,
         ShowcaseComponent,
