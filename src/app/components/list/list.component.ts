@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { ListItemComponent } from '../list-item/list-item.component';
-import { NgFor, NgForOf, NgIf } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { ICity } from '../../../app/interfaces/city.interface';
 
 @Component({
@@ -12,8 +12,14 @@ import { ICity } from '../../../app/interfaces/city.interface';
 
 })
 export class ListComponent {
-  @Input() citiesList?: ICity[] | null;
+  @Input() citiesList?: { cities: ICity[] };
   @Input() activeCity?: ICity;
+  @Output() setNewActiveCity = new EventEmitter<ICity>();
 
   constructor() {}
+
+  setActiveCity(city: ICity) {
+    this.activeCity = city;
+    this.setNewActiveCity.emit(city);
+  }
 }

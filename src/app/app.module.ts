@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { CityStoreModule } from './store/city/city-store.module';
+
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { CommonModule } from '@angular/common';
 import { ListComponent } from './components/list/list.component';
@@ -26,8 +26,8 @@ import { NotificationComponent } from './components/notification/notification.co
         StoreModule.forRoot(),
         EffectsModule.forRoot(),
         StoreDevtoolsModule.instrument(),
-        CityStoreModule,
         ApplicationStoreModule,
+       
         CommonModule,
         ListComponent,
         ShowcaseComponent,
