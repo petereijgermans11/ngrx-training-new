@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { ICity } from './interfaces/city.interface';
 import { select, Store } from '@ngrx/store';
 import { getCities, selectgetCitiesList, selectCityIsLoading, selectActiveCity} from './store/city';
-import { setMode, getMode, selectMode } from './store/application';
+import { getMode, selectMode } from './store/application';
 import { Mode } from './interfaces/Mode';
 
 @Component({
@@ -39,9 +39,4 @@ export class AppComponent implements OnInit {
         this.isLoading$ = this.store.pipe(select(selectCityIsLoading));
         this.mode$ = this.store.pipe(select(selectMode)); 
     }
-
-
-    public modeHandler(mode: Mode) {
-        this.store.dispatch(setMode({ mode }));
-      }
 }
