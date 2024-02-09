@@ -10,7 +10,6 @@
         <div *ngIf="data.mode === Mode.ShowCase">
             <app-addbutton
               [mode]="data.mode"
-              (changeMode)="modeHandler($event)"
             ></app-addbutton>
  
             <nav>
@@ -23,7 +22,7 @@
               <app-showcase [activeCity]="data.activeCity"></app-showcase>
         </div>
         <div *ngIf="data.mode === Mode.Add">
-            <app-add-city-form (cancelForm)="modeHandler(Mode.ShowCase)"></app-add-city-form>
+            <app-add-city-form></app-add-city-form>
         </div>
     </div>
 </ng-container>
