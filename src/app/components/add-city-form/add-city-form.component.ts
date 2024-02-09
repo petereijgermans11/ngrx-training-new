@@ -1,13 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-
 import {
   FormBuilder,
   FormGroup,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { Store, select } from '@ngrx/store';
+import { Mode } from '../../../app/interfaces/Mode';
+import { Store } from '@ngrx/store';
+import { setMode } from '../../store/application';
 
 @Component({
   selector: 'app-add-city-form',
@@ -39,10 +40,9 @@ export class AddCityFormComponent implements OnInit {
         return;
     }
     console.log(this.addCityForm.value);
-  
   }
 
   cancel() {
-    this.cancelForm.emit();
+    this.store.dispatch(setMode({mode :Mode.ShowCase}));
   }
 }

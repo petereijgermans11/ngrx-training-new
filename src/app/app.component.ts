@@ -38,9 +38,5 @@ export class AppComponent implements OnInit {
     setNewCity(city: any) {
       this.activeCity = city;
     }
-
-    public modeHandler(mode: Mode) {
-        this.store.dispatch(setMode({ mode }));
-      }
 }
 
