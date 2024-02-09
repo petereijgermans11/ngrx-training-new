@@ -1,7 +1,7 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 
 import { ListItemComponent } from '../list-item/list-item.component';
-import { NgFor, NgForOf, NgIf } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { ICity } from '../../../app/interfaces/city.interface';
 
 @Component({
