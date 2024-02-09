@@ -39,9 +39,4 @@ export class AppComponent implements OnInit {
         this.isLoading$ = this.store.pipe(select(selectCityIsLoading));
         this.mode$ = this.store.pipe(select(selectMode)); 
     }
-
-
-    public modeHandler(mode: Mode) {
-        this.store.dispatch(setMode({ mode }));
-      }
 }
